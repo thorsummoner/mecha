@@ -1,7 +1,6 @@
 #include <iomanip>
 #include <iostream>
 #include <math.h>
-#include <png.h>
 #include <sstream>
 #include <stdio.h>
 #include <stdlib.h>
@@ -173,7 +172,8 @@ int main()
 
     int col = 1;
     int row = 1;
-    for (int i = 0; i < tgaFile.width * tgaFile.height + 1; ++i)
+    // for (int i = 0; i < tgaFile.width * tgaFile.height + 1; ++i)
+    for (int i = 240; i < 260; ++i)
     {
         row = floor(i / tgaFile.width) + 1;
         col = i - (floor(i / tgaFile.width) * tgaFile.width) + 1;
@@ -186,11 +186,10 @@ int main()
             ++j;
         }
 
+        cout << " ::: ";
+
         cout << endl;
     }
-
-    printf( "%.08x\n", tgaFile.data );
-
 
     term::close();
 }
